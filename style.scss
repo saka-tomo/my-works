@@ -101,7 +101,7 @@ section {
 
 .top_contents {
   position:absolute;
-  top:40vh;
+  top:30vh;
   right:0;
   left:0;
   @include mq(md){
@@ -121,8 +121,9 @@ section {
 
     span {
       color:$button-color;
-      font-size:1.1em;
+      font-size:1.4em;
       text-shadow:1px 1px 4px $button-color;
+      font-family: 'Hachi Maru Pop', cursive;
     }
 
     &::before {
@@ -214,10 +215,14 @@ section {
   border-radius:40px;
   border:1px solid #666;
   margin:20px auto 0;
+  font-size:1.2em;
 
   .date {
     color:red;
     padding:10px;
+  }
+  td {
+    text-decoration:underline;
   }
 }
 
@@ -434,7 +439,7 @@ section {
   //message section
   .pm_first,.pm_second {
     position:relative;
-    width:80%;
+    width:100%;
     margin:80px auto;
 
     p:first-child {
@@ -450,6 +455,7 @@ section {
       white-space:pre-line;
       text-align:center;
       font-size:1.2em;
+      font-weight:bold;
       z-index:3;
     }
     p:last-child {
@@ -458,8 +464,9 @@ section {
       margin:0 auto;
       text-align:left;
       text-shadow:1px 0 1px white;
-      font-size:1.1em;
-      padding:30px 120px;
+      font-size:1.3em;
+      letter-spacing: -1px;
+      padding:30px 100px;
       z-index:1;
       white-space:pre-line;
 
@@ -553,6 +560,7 @@ section {
   color:$com-color;
   white-space:pre-line;
   text-shadow:1px 0 2px white;
+  background:rgba(255,255,255,0.7);
 }
 
 .pp_second-content {

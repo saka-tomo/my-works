@@ -3,6 +3,11 @@
 @import "reset-css";
 @import "variables";
 
+*{
+  // font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Noto Serif JP', serif;
+}
+
 
 header {
   width:100%;
@@ -68,6 +73,7 @@ nav {
       a {
         display:inline-block;
         width:100%;
+        font-size:1.2em;
         &:hover,&:focus {
           transition:all .3s;
           opacity:0.8;

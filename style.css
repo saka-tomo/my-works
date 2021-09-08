@@ -46,6 +46,10 @@ button {
           appearance: none;
 }
 
+* {
+  font-family: "Noto Serif JP", serif;
+}
+
 header {
   width: 100%;
   height: 160px;
@@ -113,6 +117,7 @@ nav ul li {
 nav ul li a {
   display: inline-block;
   width: 100%;
+  font-size: 1.2em;
 }
 nav ul li a:hover, nav ul li a:focus {
   transition: all 0.3s;
@@ -285,7 +290,7 @@ section {
 
 .top_contents {
   position: absolute;
-  top: 40vh;
+  top: 30vh;
   right: 0;
   left: 0;
 }
@@ -309,8 +314,9 @@ section {
 }
 .top_contents p span {
   color: #0F8625;
-  font-size: 1.1em;
+  font-size: 1.4em;
   text-shadow: 1px 1px 4px #0F8625;
+  font-family: "Hachi Maru Pop", cursive;
 }
 .top_contents p::before {
   position: absolute;
@@ -394,10 +400,14 @@ section {
   border-radius: 40px;
   border: 1px solid #666;
   margin: 20px auto 0;
+  font-size: 1.2em;
 }
 .notice_contents .date {
   color: red;
   padding: 10px;
+}
+.notice_contents td {
+  text-decoration: underline;
 }
 
 #medical-contents {
@@ -605,7 +615,7 @@ section {
 }
 .pol-message .pm_first, .pol-message .pm_second {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 80px auto;
 }
 .pol-message .pm_first p:first-child, .pol-message .pm_second p:first-child {
@@ -618,6 +628,7 @@ section {
   white-space: pre-line;
   text-align: center;
   font-size: 1.2em;
+  font-weight: bold;
   z-index: 3;
 }
 .pol-message .pm_first p:last-child, .pol-message .pm_second p:last-child {
@@ -626,8 +637,9 @@ section {
   margin: 0 auto;
   text-align: left;
   text-shadow: 1px 0 1px white;
-  font-size: 1.1em;
-  padding: 30px 120px;
+  font-size: 1.3em;
+  letter-spacing: -1px;
+  padding: 30px 100px;
   z-index: 1;
   white-space: pre-line;
 }
@@ -640,7 +652,7 @@ section {
   width: 70%;
   height: 100%;
   border-radius: 30px;
-  background: rgba(131, 221, 135, 0.7);
+  background: rgba(131, 221, 135, 0.8);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
@@ -709,6 +721,7 @@ section {
   color: #CC5897;
   white-space: pre-line;
   text-shadow: 1px 0 2px white;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .pp_second-content {
