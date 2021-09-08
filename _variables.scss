@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+//定数定義
+$main-color:rgb(131, 221, 135);
+$main-color-a:rgb(131, 221, 135,0.7);
+$button-color:#0F8625;
+$title-bar:rgba(69, 140, 253,0.7);
+$mc-color:hsl(178, 70%, 80%);
+$mc-item:#049691;
+$s-color:hsl(70, 50%, 80%);
+$s-item:#809604;
+$com-color:#CC5897;
+
+//media query
+$breakpoints : (
+  "lg":"screen and (max-width:1280px)",
+  "md":"screen and (max-width:768px)",
+  "sm":"screen and (max-width:480px)"
+);
+
+@mixin mq($breakpoint:lg){//標準でlgサイズ
+  @media #{map-get($breakpoints,$breakpoint)}{
+    @content;
+  }
+}
+

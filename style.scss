@@ -1,0 +1,574 @@
+@charset "utf-8";
+
+@import "reset-css";
+@import "variables";
+@import "header";
+@import "footer";
+
+.container {
+  width:100%;
+  margin-top:160px;
+  position:relative;
+}
+
+
+.wrap {
+  width:100%;
+  max-width:1280px;
+  margin:0 auto;
+  position:relative;
+  box-shadow:3px 0 6px 4px #888;
+}
+
+// パララックス用img背景設定
+.parallax-image {
+  position:fixed;
+  top:0;
+  width:100%;
+  max-width:1280px;
+  overflow-x:hidden;
+  height:100vh;
+  background-image:url(./img/parallax-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:top;
+  z-index:-1000;
+}
+
+// 予約ボタン
+.reserve {
+  width:200px;
+  height:200px;
+  position:fixed;
+  top:200px;
+  right:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  z-index:10;
+
+  .reserve_btn {
+    width:100%;
+    height:80px;
+    border-radius:100px 0 0 100px;
+    background-color:$button-color;
+    color:white;
+    font-size:2em;
+
+    &:hover,
+    &:focus {
+      text-shadow:1px 1px 3px white;
+    }
+
+    &:active {
+      transform:translateX(4px);
+    }
+  }
+}
+
+//section背景
+section {
+  background:#eee;
+}
+
+
+//=== TOPセクション
+.top_image {
+  width:100%;
+  height:90vh;
+  background-image:url(./img/top-image.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  position:relative;
+  opacity:0.8;
+
+  &::before {
+    content:"";
+    background:inherit;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    top:-5px;
+    left:-5px;
+    right:-5px;
+    bottom:-5px;
+  }
+}
+
+.top_contents {
+  position:absolute;
+  top:40vh;
+  right:0;
+  left:0;
+  @include mq(md){
+    top:30vh;
+  }
+
+  p {
+    text-align:center;
+    font-size:3em;
+    white-space:pre;
+    position:relative;
+    text-shadow:1px 1px 4px white;
+    z-index:2;
+    @include mq(md){
+      font-size:1.8em;
+    }
+
+    span {
+      color:$button-color;
+      font-size:1.1em;
+      text-shadow:1px 1px 4px $button-color;
+    }
+
+    &::before {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      content:"";
+      height:180px;
+      background-color:rgba(131, 221, 135,0.5);
+      filter: blur(50px);
+      border-radius:50%;
+      z-index:-1;
+    }
+  }
+
+  ul {
+    display:flex;
+    flex-wrap:nowrap;
+    width:100%;
+    height:300px;
+    justify-content:space-around;
+    align-items:center;
+
+    li {
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      background-color:$button-color;
+      box-shadow:7px 5px 8px #333;
+      opacity:0.8;
+      @include mq(md){
+        width:140px;
+        height:140px;
+      }
+      
+      a {
+        color:white;
+        width:100%;
+        font-size:2em;
+        display:inline-block;
+        text-align:center;
+        line-height:200px;
+        @include mq(md){
+          font-size:1.4em;
+          line-height:140px;
+        }
+      }
+      &:hover, &:focus {
+        opacity:1;
+      }
+
+      &:active {
+        box-shadow:none;
+        transform:translate(5px,7px);
+      }
+    }
+  }
+}
+
+
+
+//セクションタイトル
+.section-title {
+  padding-top:100px;
+  font-size:3em;
+  width:100%;
+  text-align:center;
+  position:relative;
+  text-shadow:1px 1px 3px white;
+
+  &::before {
+    content:"";
+    width:400px;
+    height:12px;
+    border-radius:6px;
+    background:$title-bar;
+    position:absolute;
+    left:50%;
+    bottom:8px;
+    transform:translateX(-50%);
+  }
+}
+
+// === お知らせsection
+.notice_contents {
+  width:600px;
+  height:400px;
+  border-radius:40px;
+  border:1px solid #666;
+  margin:20px auto 0;
+
+  .date {
+    color:red;
+    padding:10px;
+  }
+}
+
+
+
+// === 診療内容section
+#medical-contents {
+  width:100%;
+  height:1300px;
+  position:relative;
+  z-index:1;
+
+  &::before {
+    position:absolute;
+    top:50px;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0 auto;
+    content:"";
+    width:1200px;
+    height:1200px;
+    border-radius:50%;
+    background-color:$mc-color;
+    z-index:-1;
+  } 
+  &::after {
+    position:absolute;
+    top:854px;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0 auto;
+    content:"";
+    width:1200px;
+    height:400px;
+    background-image:url(./img/circle-image_custom.png);
+    background-repeat: no-repeat;
+    z-index:-1;
+  } 
+}
+
+.mc-items {
+  margin:0 auto;
+  width:78%;
+  height:50%;
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  align-items:center;
+  @include mq(md){
+    width:90%;
+  }
+}
+
+.mc-item {
+  width:50%;
+  display:flex;
+  
+
+  h3 {
+    background-color:$mc-item;
+    width:180px;
+    height:180px;
+    box-shadow:4px 2px 6px #777;
+    border-radius:50%;
+    text-align:center;
+    line-height:180px;
+    font-size:2em;
+    color:white;
+    @include mq(md){
+      width:100px;
+      height:100px;
+      line-height:100px;
+      font-size:1.2em;
+    }
+  }
+
+  p {
+    margin-left:20px;
+    align-self:flex-end;
+    white-space:pre-line;
+    text-align:left;
+  }
+}
+
+.first-visit {
+  position:absolute;
+  top:1050px;
+  left:50%;
+  transform:translateX(-50%);
+  width:400px;
+  height:100px;
+  background-color:$mc-item;
+  border-radius:20px;
+  box-shadow:2px 2px 4px #666;
+  color:white;
+  
+  a {
+    font-size:2em;
+    display:inline-block;
+    width:100%;
+    height:100%;
+    text-align:center;
+    line-height:100px;
+    color:inherit;
+  }
+  i {
+    color:inherit;
+    margin-left:20px;
+  }
+}
+
+
+// === service section
+#service {
+  width:100%;
+  height:1300px;
+  position:relative;
+  z-index:1;
+
+  &::before {
+    position:absolute;
+    top:50px;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0 auto;
+    content:"";
+    width:1200px;
+    height:1200px;
+    border-radius:50%;
+    background-color:$s-color;
+    z-index:-1;
+  } 
+  &::after {
+    position:absolute;
+    top:854px;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0 auto;
+    content:"";
+    width:1200px;
+    height:400px;
+    background-image:url(./img/circle-image2_custom.png);
+    background-repeat: no-repeat;
+    z-index:-1;
+  } 
+}
+
+.s-items {
+  margin:0 auto;
+  width:90%;
+  height:60%;
+  display:flex;
+  flex-flow:row nowrap;
+  align-items:bottom;
+}
+
+.s-item {
+  width:25%;
+
+  h3 {
+    background-color:$s-item;
+    width:180px;
+    height:180px;
+    box-shadow:4px 2px 6px #777;
+    border-radius:50%;
+    text-align:center;
+    line-height:180px;
+    font-size:1.6em;
+    color:white;
+    margin:150px auto 0;
+
+    @include mq(md){
+      width:100px;
+      height:100px;
+      line-height:100px;
+      font-size:0.8em;
+    }
+  }
+
+  p {
+    margin:30px auto 0;
+    width:200px;
+    white-space:pre-line;
+    text-align:left;
+    @include mq(md){
+      width:120px;
+    }
+  
+    &:nth-child(2) {
+      font-weight:bold;
+      text-align:center;
+      margin-top:50px;
+      font-size:1.2em;
+      @include mq(md){
+        font-size:1em;
+      }
+    }
+  }
+}
+
+// === Policy Section
+#policy {
+  background:transparent;
+
+  .section-title {
+    background:linear-gradient(to bottom,#eee,transparent);
+  }
+}
+
+.pol-message {
+  width:80%;
+  margin:0 auto;
+  
+  //message section
+  .pm_first,.pm_second {
+    position:relative;
+    width:80%;
+    margin:80px auto;
+
+    p:first-child {
+      //box
+      background:rgba(255,255,255,0.8);
+      width:150px;
+      height:80px;
+      border-radius:4px;
+      //position
+      position:absolute;
+      top:0;
+      //other_setting
+      white-space:pre-line;
+      text-align:center;
+      font-size:1.2em;
+      z-index:3;
+    }
+    p:last-child {
+      width:86%;
+      height:100%;
+      margin:0 auto;
+      text-align:left;
+      text-shadow:1px 0 1px white;
+      font-size:1.1em;
+      padding:30px 120px;
+      z-index:1;
+      white-space:pre-line;
+
+      &::before {
+        //position
+        position:absolute;
+        top:20px;
+        left:50%;
+        transform:translateX(-50%);
+        //content-box
+        content:"";
+        width:70%;
+        height:100%;
+        border-radius:30px;
+        background:$main-color-a;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        z-index:-1;
+      }
+    }
+  }
+  .pm_first p:first-child {
+    left:10px;
+    line-height:40px;
+  }
+  .pm_second p:first-child {
+    right:10px;
+    line-height:80px;
+  }
+
+}
+
+.pol-philosophy {
+  background:transparent;
+  height:400px;
+  width:100%;
+  background: -moz-linear-gradient(top,transparent,$main-color); 
+  background: -webkit-linear-gradient(top,transparent,$main-color);
+  background:linear-gradient(to bottom,transparent,$main-color);
+  
+}
+
+.pp {
+  width:80%;
+  position:relative;
+  margin:0 auto;
+  text-align:center;
+
+  &::before,&::after {
+    content:"";
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background-color:#333;
+    position:absolute;
+    top:20px;
+  }
+  &::before {
+    left:0;
+  }
+  &::after {
+    right:0;
+  }
+}
+
+.pp_title {
+  font-size:1.8em;
+  text-shadow:1px 1px 2px white;
+
+  &::before,&::after {
+    content:"";
+    width:40%;
+    height:2px;
+    background:#333;
+    position:absolute;
+    top:26px;
+  }
+  &::before {
+    left:0;
+  }
+  &::after {
+    right:0;
+  }
+}
+
+.pp_first-content {
+  font-size:2em;
+  color:$com-color;
+  white-space:pre-line;
+  text-shadow:1px 0 2px white;
+}
+
+.pp_second-content {
+  margin:0 auto;
+  font-size:1.2em;
+  text-shadow:1px 0 2px white;
+  width:60%;
+  text-align:left;
+}
+
+
+
+
+
+
+
+
+
+
