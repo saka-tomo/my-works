@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -69,7 +70,6 @@ h1 {
 @media screen and (max-width:768px) {
   h1 {
     font-size: 1.2em;
-    width: 50%;
   }
 }
 
@@ -97,29 +97,40 @@ h1 {
   font-size: 1.4em;
   text-shadow: 1px 1px 3px white;
 }
+@media screen and (max-width:768px) {
+  .tel {
+    top: 50px;
+    right: 10px;
+  }
+}
 
 nav {
   width: 100%;
   height: 40px;
 }
-nav ul {
+@media screen and (max-width:768px) {
+  nav {
+    display: none;
+  }
+}
+nav .pc-menu {
   display: flex;
   justify-content: center;
   height: 40px;
 }
-nav ul li {
+nav .pc-menu li {
   width: 20%;
   line-height: 40px;
   text-align: center;
   position: relative;
   border-right: 1px solid #666;
 }
-nav ul li a {
+nav .pc-menu li a {
   display: inline-block;
   width: 100%;
   font-size: 1.2em;
 }
-nav ul li a:hover, nav ul li a:focus {
+nav .pc-menu li a:hover, nav .pc-menu li a:focus {
   transition: all 0.3s;
   opacity: 0.8;
   font-size: 1.1em;
@@ -127,11 +138,133 @@ nav ul li a:hover, nav ul li a:focus {
   text-decoration: underline;
   background-color: rgba(8, 107, 187, 0.603);
 }
-nav ul li a:active {
+nav .pc-menu li a:active {
   transform: translateY(2px);
 }
-nav ul li:last-child {
+nav .pc-menu li:last-child {
   border-right: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+@media screen and (max-width:768px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* メニューボタンの位置 */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+
+/* 三本線のハンバーガーアイコン */
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  border-radius: 2px;
+  background-color: #333;
+  position: absolute;
+}
+
+.menu-btn span:before {
+  bottom: 12px;
+}
+
+.menu-btn span:after {
+  top: 12px;
+}
+
+/* アイコンがクリックされた時に✗ボタンになる */
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+  /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* チェックボックスは隠す */
+#menu-btn-check {
+  display: none;
+}
+
+/* -----ここからメニューリスト-------- */
+/* 画面いっぱいに表示 */
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /*画面の外に飛ばして見えなくする*/
+  z-index: 80;
+  background-color: #83dd87;
+  transition: all 0.5s;
+}
+
+/* チェックボタンがチェックされた時 */
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;
+  /*メニューを画面内へ*/
+}
+
+.menu-content ul {
+  padding: 70px 10px 0;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px #333;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 2em;
+  box-sizing: border-box;
+  color: #333;
+  text-decoration: none;
+  padding: 20px;
+  position: relative;
+}
+.menu-content ul li a:hover, .menu-content ul li a:focus {
+  background: rgba(8, 107, 187, 0.603);
+  color: white;
+}
+
+/* 三角形の矢印アイコン */
+.menu-content ul li a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: solid 2px #333;
+  border-right: solid 2px #333;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 10%;
+  top: 50%;
 }
 
 * {
@@ -294,11 +427,6 @@ section {
   right: 0;
   left: 0;
 }
-@media screen and (max-width:768px) {
-  .top_contents {
-    top: 30vh;
-  }
-}
 .top_contents p {
   text-align: center;
   font-size: 3em;
@@ -309,7 +437,7 @@ section {
 }
 @media screen and (max-width:768px) {
   .top_contents p {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 }
 .top_contents p span {
@@ -415,6 +543,7 @@ section {
   height: 1300px;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 }
 #medical-contents::before {
   position: absolute;
@@ -519,6 +648,7 @@ section {
   height: 1300px;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 }
 #service::before {
   position: absolute;

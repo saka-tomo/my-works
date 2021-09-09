@@ -104,9 +104,6 @@ section {
   top:30vh;
   right:0;
   left:0;
-  @include mq(md){
-    top:30vh;
-  }
 
   p {
     text-align:center;
@@ -116,7 +113,7 @@ section {
     text-shadow:1px 1px 4px white;
     z-index:2;
     @include mq(md){
-      font-size:1.8em;
+      font-size:2em;
     }
 
     span {
@@ -234,6 +231,7 @@ section {
   height:1300px;
   position:relative;
   z-index:1;
+  overflow-x:hidden;
 
   &::before {
     position:absolute;
@@ -341,6 +339,7 @@ section {
   height:1300px;
   position:relative;
   z-index:1;
+  overflow-x:hidden;
 
   &::before {
     position:absolute;
