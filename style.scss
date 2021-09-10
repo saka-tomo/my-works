@@ -415,29 +415,33 @@ section {
     p:first-child {
       //box
       background:rgba(255,255,255,0.8);
-      width:150px;
+      width:180px;
       height:80px;
       border-radius:4px;
+      z-index:3;
       //position
       position:absolute;
       top:0;
-      //other_setting
+      //text
       white-space:pre-line;
       text-align:center;
-      font-size:1.2em;
+      font-size:1.4em;
       font-weight:bold;
-      z-index:3;
+     
     }
     p:last-child {
       width:100%;
       height:100%;
       margin:0 auto;
+      padding:30px 30px 30px 180px;
+      z-index:1;
+
+      //text
       text-align:left;
       text-shadow:1px 0 1px white;
-      font-size:1.6em;
+      font-size:1.4em;
+      font-weight:100;
       letter-spacing: -1px;
-      padding:30px 30px 30px 160px;
-      z-index:1;
       white-space:pre-line;
     }
   }
