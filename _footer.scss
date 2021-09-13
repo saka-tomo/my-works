@@ -9,6 +9,10 @@ footer {
   height:350px;
   background-color:$main-color;
   position:relative;
+  padding-bottom:100px;
+  @include mq(md){
+    height:auto;
+  }
 }
 
 .footer-logo {
@@ -16,6 +20,12 @@ footer {
   height:120px;
   text-align:center;
   font-size:5em;
+  @include mq(md){
+    width:60px;
+    height:60px;
+    font-size:4em;
+    margin:0 auto;
+  }
 }
 
 .site-map {
@@ -23,27 +33,38 @@ footer {
   top:20px;
   right:50px;
   width:400px;
+  max-width:80%;
 
-  
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
 
   ul{
     font-weight:bold;
+    font-size:1.2em;
+    margin-top:10px;
     li {
       font-weight:normal;
+      padding-left:15px;
       a {
         display:inline-block;
         width:100%;
         height:100%;
         padding:10px 0;
+        font-size:0.8em;
         &:hover {
           background-color:lighten($main-color, 20%);
         }
       }
     }
   }
+
+  @include mq(md){
+    position:static;
+    display:block;
+    margin:40px auto;
+  }
+
 }
 
 small {

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Noto+Sans+JP&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+  <title>Sample Clinic Site</title>
+
+  <link rel="stylesheet" href="style.css">
+
+   <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/a1fafd823c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <!-- header -->
+  <header>
+    
+    <h1>ヘルシークリニック</h1>
+    <div class="logo"><i class="fab fa-pagelines"></i></div>
+    <div class="tel">TEL&nbsp;:&nbsp;000-0000-0000</div>  
+
+    <nav>
+      <ul class="pc-menu">
+        <li><a href="#">トップページ</a></li>
+        <li><a href="#">アクセスと診療時間</a></li>
+        <li><a href="#">診療内容</a></li>
+        <li><a href="#">クリニックについて</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger-menu">
+      <!-- ここからアイコン -->
+      <input type="checkbox" id="menu-btn-check">
+      <label for="menu-btn-check" class="menu-btn"><span></span></label>
+      
+      <!--ここからメニュー-->
+      <div class="menu-content">
+        <ul>
+          <li><a href="#top">トップページ</a></li>
+          <li><a href="#">アクセスと診療時間</a></li>
+          <li><a href="#">診療内容</a></li>
+          <li><a href="#">クリニックについて</a></li>
+        </ul>
+      </div>
+      <!--ここまでメニュー-->
+  </div>
+
+  </header>
+
+
+  <!-- Main Contents Area -->
+  <div class="container">
+    <!-- コンテンツラップ -->
+    <div class="wrap">
+
+
+        
+      <!-- 予約ボタン表示 -->
+      <div class="reserve">
+        <button class="reserve_btn">電話予約</button>
+        <button class="reserve_btn"><a href="#">Web予約</a></button>
+      </div>
+
+
+
+      <section id="access">
+        <h2 class="section-title">アクセス</h2>
+
+        <div class="map"></div>
+
+        <div class="access_content">
+          <table>
+            <tr>
+              <td>住所 :</td>
+              <td>○○県〇〇市○○町123-456</td>
+            </tr>
+            <tr>
+              <td>TEL :</td>
+              <td>000-0000-0000</td>
+            </tr>
+            <tr>
+              <td>院内駐車場 :</td>
+              <td>10台分完備</td>
+            </tr>
+            <tr>
+              <td>最寄りのバス停 :</td>
+              <td>健康クリニック前</td>
+            </tr>
+          </table>
+
+          <div class="clinic-img">
+            <img src="./img/建物.jpg" alt="クリニックの外観">
+          </div>
+        </div>
+      </section>
+
+      <section id="consultation-hours">
+        <h2 class="section-title">診療時間</h2>
+
+        <div class="ch-content">
+          <table>
+            <tr>
+              <th class="description">診療時間</th>
+              <th>月</th>
+              <th>火</th>
+              <th>水</th>
+              <th>木</th>
+              <th>金</th>
+              <th>土<span>※</span></th>
+              <th>日</th>
+            </tr>
+            <tr>
+              <td class="description">午前(9:30 ~ 12:00)</td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="fas fa-times"></i></td>
+            </tr>
+            <tr>
+              <td class="description">午後(13:30 ~ 18:00)</td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="far fa-circle"></i></td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-times"></i></td>
+            </tr>
+          </table>
+
+          <div class="ch-info">
+            <p>定休日 : 水曜日 / 日曜日 / 祝日</p>
+            <p>※土曜日の診察は午前のみです。</p>
+          </div>
+        </div>
+
+
+      </section>
+
+
+
+    
+
+      <!-- wrap終了タグ -->
+    </div>
+
+    <!-- container終了タグ -->
+  </div>
+
+<!-- footer -->
+<footer>
+  <div class="footer-logo"><i class="fab fa-pagelines"></i></div>
+
+  <div class="site-map">
+    <ul>診療
+      <li><a href="#top">トップページ</a></li>
+      <li><a href="#notice">お知らせ</a></li>
+      <li><a href="#medical-contents">診療内容</a></li>
+      <li><a href="#">予約方法とお支払い</a></li>
+      <li><a href="#service">できること</a></li>
+    </ul>
+
+    <ul>クリニック
+      <li><a href="#">基本方針</a></li>
+      <li><a href="#">採用情報</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+    </ul>
+  </div>
+
+  <small>&copy;2021 Helth Clinic All Rights Reserved.</small>
+</footer>
+  
+</body>
+</html>

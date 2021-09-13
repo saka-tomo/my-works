@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+@import "variables";
+@import "reset-css";
+
+
+#access {
+  margin:0 auto;
+  font-size:1.2em;
+  @include mq(md){
+    font-size:1em;
+  }
+  .map {
+    margin:50px auto 0 auto;
+    width:90%;
+    height:500px;
+    border:1px solid #777;
+    background:url(./img/accessMap.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    @include mq(md){
+      height:300px;
+    }
+  }
+}
+
+.access_content {
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin:50px auto 0 auto;
+  padding-bottom:100px;
+  width:90%;
+  @include mq(md){
+    flex-direction:column;
+    align-items:center;
+  }
+
+  table {
+    padding-left:50px;
+    td {
+      padding:10px;
+    }
+  }
+
+  .clinic-img {
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    overflow:hidden;
+    text-align:center;
+    @include mq(md){
+      margin-top:50px;
+    }
+    img {
+      width:300px;
+      height:300px;
+    }
+  }
+}
+
+#consultation-hours {
+  margin:0 auto;
+  font-size:1.2em;
+  @include mq(md){
+    font-size:1em;
+  }
+}
+
+.ch-content table {
+  background:$main-color-a;
+  width:90%;
+  margin:40px auto;
+  border-collapse:collapse;
+  border:1px solid  #333;
+
+  tr {
+    border-bottom:1px solid #333;
+    &:last-child {
+      border-bottom:none;
+    }
+    }
+    .description {
+      border-right:1px solid #333;
+    }
+
+  th,td,td i {
+    padding:15px 5px;
+    text-align:center;
+    span {
+      margin-left:5px;
+    }
+    i {
+      font-size:1.4em;
+    }
+  }
+}
+
+.ch-info {
+  width:90%;
+  margin:0 auto;
+  padding-bottom:100px;
+  line-height:2em;
+}
+
