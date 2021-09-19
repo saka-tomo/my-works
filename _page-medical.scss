@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+@import "variables";
+@import "reset-css";
+@import "header";
+
+
+#medical-info {
+  padding-bottom:100px;
+}
+
+//項目ごとのブロック
+.medical-block {
+  width:86%;
+  position:relative;
+  margin:100px 2% 0 12%;
+
+  @include mq(md){
+    margin:100px auto;
+    width:90%;
+  }
+
+  h3 {
+    //posiiton
+    position:absolute;
+    top:60px;
+    left:-10%;
+    z-index:5;
+    //block
+    width:180px;
+    height:180px;
+    line-height:180px;
+    border-radius:50%;
+    background:$mc-item;
+    box-shadow:2px 1px 2px #333;
+    //text
+    font-size:2em;
+    text-align:center;
+    color:white;
+
+    @include mq(md){
+      position:static;
+      margin:20px auto;
+    }
+  }
+}
+
+//項目のコンテンツ
+.medical-block_content {
+  //block
+  width:100%;
+  padding:20px 20px 20px 150px;
+  border-radius:40px;
+  background-color:$mc-color;
+
+  @include mq(md){
+    padding:20px;
+  }
+
+  //直下のP要素を指定
+  & > p {
+    padding:20px 10px;
+    margin:20px auto;
+    font-size:1.2em;
+    line-height:1.8em;
+    white-space:pre-line;
+  }
+}
+
+//症例
+.symptoms {
+  display:flex;
+  @include mq(md){
+    display:block;
+  }
+
+  .symptoms_item {
+    width:48%;
+    padding:10px;
+    margin:20px auto;
+    background-color:$sub-color;
+    border-radius:20px;
+    border:1px solid #999;
+    @include mq(md){
+      width:100%;
+    }
+
+    p {
+      padding:20px 10px;
+    }
+  }
+}
+//項目タイトル
+h4 {
+  text-align:center;
+  font-weight:bold;
+  padding:10px;
+  font-size:1.6em;
+}
+
+//予防接種
+
+.about-vaccine {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  @include mq(md){
+    display:block;
+  }
+}
+
+
+.about-vaccine_circle {
+  width:49%;
+  border-radius:50%;
+  margin-top:30px;
+  position:relative;
+
+  @include mq(md){
+    width:80%;
+    margin:30px auto;
+  }
+
+  &:after {
+    display:block;
+    position:absolute;
+    top:0;
+    left:30px;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border-radius:50%;
+    color:white;
+    text-align:center;
+    box-shadow:2px 2px 4px #999;
+  }
+
+  h4,p {
+    position:absolute;
+    left:20px;
+    right:20px;
+  }
+  h4 {
+    top:30px;
+  }
+  p {
+    top:130px;
+    line-height:1.8em;
+  }
+
+  &::before {
+    display:block;
+    content:"";
+    padding-top:100%;
+  }
+}
+.live-vaccine {
+  background-color:$sub-color;
+  &:after {
+    content:"生";
+    background:darken($sub-color,20%);
+  }
+}
+.inactivated-vaccine {
+  background-color:$sub2-color;
+  &:after {
+    content:"不活";
+    background:darken($sub2-color,20%);
+  }
+}
+
+.vaccine-btn {
+  width:100%;
+  a {
+    display:block;
+    width:200px;
+    height:50px;
+    line-height:50px;
+    border-radius:10px;
+    background-color:$mc-item;
+    box-shadow:2px 2px 2px #999;
+    font-size:1.2em;
+    color:white;
+    margin:50px auto;
+    text-align:center;
+  }
+}
+
+.vaccine-info {
+  width:80%;
+  margin:50px auto;
+  position:relative;
+  font-size:1.4em;
+  letter-spacing:5px;
+  padding:30px;
+
+  @include mq(md){
+    font-size:1em;
+    width:100%;
+    padding:20px;
+    letter-spacing: 2px;
+  }
+
+  p {
+    background:$main-color;
+    margin:0 auto;
+    line-height:2em;
+    
+    text-align:center;
+    white-space:pre-line;
+
+  }
+  span {
+    font-size:1.6em;
+    font-weight:bold;
+    @include mq(md){
+      font-size:1.2em;
+    }
+  }
+
+  &:before,&:after {
+    content:"";
+    display:block;
+    width:100px;
+    height:100px;
+    position:absolute;
+    @include mq(md){
+      width:50px;
+      height:50px;
+    }
+  }
+  &:before {
+    top:0;
+    left:0;
+    border-top:2px solid $button-color;
+    border-left:2px solid $button-color;
+  }
+  &:after {
+    bottom:0;
+    right:0;
+    border-bottom:2px solid $button-color;
+    border-right:2px solid $button-color;
+  }
+}
+
+.belongings {
+  width:70%;
+  margin:50px auto;
+  @include mq(md){
+    width:100%;
+  }
+  h4 {
+    border-left:20px solid orange;
+    background:#ddd;
+  }
+
+  li {
+    padding:10px;
+    font-size:1.2em;
+    i {
+      margin-right:15px;
+      font-size:1.2em;
+    }
+  }
+  
+}
+
+.medical-checkup {
+  display:flex;
+  flex-flow:row wrap;
+  width:90%;
+
+  @include mq(md){
+    width:100%;
+  }
+
+  .checkup-item {
+    width:calc(100% / 3);
+    // background:pink;
+    background-size:cover;
+    border:1px solid #777;
+    position:relative;
+    overflow:hidden;
+
+    @include mq(md){
+      width:50%;
+    }
+
+    &:before {
+      content:"";
+      display:block;
+      padding-top:100%;
+    }
+    &:hover,&:focus {
+      transform:scale(0.98,0.98);
+      opacity:0.8;
+      
+    }
+    p {
+      font-size:1.8em;
+      white-space:nowrap;
+      color:white;
+      text-shadow:1px 1px #333;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    }
+  }
+}
+
+.endoscopy {
+  background:url(./img/endoscopy.png);
+}
+.ultrasonography {
+  background:url(./img/ultrasonography.png);
+}
+.x-ray {
+  background:url(./img/X-ray.png);
+}
+.electrocardiography {
+  background:url(./img/electrocardiography.png);
+}
+.blood-test {
+  background:url(./img/blood-test.jpg);
+}
+.other-inspection {
+  background:url(./img/other-inspection.jpg);
+}
+
+
+

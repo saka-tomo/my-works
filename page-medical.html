@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Noto+Sans+JP&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+  <title>Sample Clinic Site</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a1fafd823c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- header -->
+  <header>
+    
+    <h1>ヘルシークリニック</h1>
+    <div class="logo"><i class="fab fa-pagelines"></i></div>
+    <div class="tel">TEL&nbsp;:&nbsp;000-0000-0000</div>  
+
+    <nav>
+      <ul class="pc-menu">
+        <li><a href="./index.html">トップページ</a></li>
+        <li><a href="./page-access.html">アクセスと診療時間</a></li>
+        <li><a href="./page-medical.html">診療内容</a></li>
+        <li><a href="./index.html#service">クリニックについて</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger-menu">
+      <!-- ここからアイコン -->
+      <input type="checkbox" id="menu-btn-check">
+      <label for="menu-btn-check" class="menu-btn"><span></span></label>
+      
+      <!--ここからメニュー-->
+      <div class="menu-content">
+        <ul>
+          <li><a href="./index.html">トップページ</a></li>
+          <li><a href="./page-access.html">アクセスと診療時間</a></li>
+          <li><a href="./page-medical.html">診療内容</a></li>
+          <li><a href="./index.html#service">クリニックについて</a></li>
+        </ul>
+      </div>
+      <!--ここまでメニュー-->
+  </div>
+
+  </header>
+
+
+  <!-- Main Contents Area -->
+  <div class="container">
+    <!-- コンテンツラップ -->
+    <div class="wrap">
+        
+      <!-- 予約ボタン表示 -->
+      <div class="reserve">
+        <button class="reserve_btn">電話予約</button>
+        <button class="reserve_btn"><a href="#">Web予約</a></button>
+      </div>
+
+
+
+
+
+      <section id="medical-info">
+        <h2 class="section-title">診療案内</h2>
+
+        <!-- 内科 internal-medicine -->
+        <div class="medical-block">
+          <h3>内科</h3>
+          <div class="medical-block_content">
+            <!-- 症例エリア -->
+            <div class="symptoms">
+
+              <div class="symptoms_item">
+                <h4>&lt;症状&gt;</h4>
+                <p>発熱・咳・頭痛・疲れ・痛み・
+                  けん怠感・だるさ・気持ち悪さ</p>
+              </div>
+              <div class="symptoms_item">
+                <h4>&lt;疾患&gt;</h4>
+                <p>発熱・下痢・便秘・高血圧・
+                  貧血・高脂血症・インフルエンザ</p>
+              </div>
+
+            </div>
+
+            <p>上記のような症状、疾患の改善をサポートいたします。
+              生活数看病や様々な身体の悩みもご相談ください。</p>
+          </div>
+        </div>
+
+        <!-- 小児科 Pediatrics -->
+        <div class="medical-block">
+          <h3>小児科</h3>
+          <div class="medical-block_content">
+
+            <!-- 症例エリア -->
+            <div class="symptoms">
+
+              <div class="symptoms_item">
+                <h4>&lt;症状&gt;</h4>
+                <p>発熱・咳・鼻水・嘔吐・
+                  食欲がない・機嫌が悪い・泣きやまない</p>
+              </div>
+              <div class="symptoms_item">
+                <h4>&lt;疾患&gt;</h4>
+                <p>発熱・下痢・便秘・
+                  突発性発疹・インフルエンザ</p>
+              </div>
+
+            </div>
+
+            <p>上記のような症状、疾患の改善をサポートいたします。
+              小児とは一般的に０歳〜１５歳までのお子様のことです。
+              お子様ならではの、発育・発達の悩みから病気まで幅広くサポートいたします。</p>
+          </div>
+        </div>
+        
+
+        <!-- 予防接種 vaccination -->
+        <div class="medical-block">
+          <h3>予防接種</h3>
+          <div class="medical-block_content">
+            
+            <div class="about-vaccine">
+              <!-- 生ワクチン -->
+              <div class="about-vaccine_circle live-vaccine">
+                <h4>&lt;生ワクチン&gt;</h4>
+                <p>生きた病原体（細菌やウイルス）の病原性を弱めたものを接種し、体の中で増やして免疫をつくります。
+                  その病気に罹ったのと同じように抵抗力がつきます。接種回数は不活化ワクチンと比べ少なくて済みます。
+                  </p>
+              </div>
+
+              <!-- 不活ワクチン -->
+              <div class="about-vaccine_circle inactivated-vaccine">
+                <h4>&lt;不活化ワクチン&gt;</h4>
+                <p>細菌やウイルスに、熱やホルマリンを加えて病原性を不活化（免疫をつけるのに必要な成分は残して、増殖性・毒性を無くすこと）して投与し、免疫をつけるように導きます。生ワクチンと異なり、感染予防レベルの免疫をつけるには、数回の追加接種が必要になります（接種回数はワクチンの種類によってそれぞれ異なります）</p>
+
+              </div>
+            </div>
+
+            <button class="vaccine-btn"><a href="#">予防接種一覧はこちら</a></button>
+
+
+            <!-- 予防接種案内 -->
+            <div class="vaccine-info">
+              <p>予防接種は<span>完全予約制</span>です。
+              Web、またはお電話でご予約ください。</p>
+            </div>
+
+            <!-- 持ち物 -->
+            <div class="belongings">
+              <h4>&lt;ご持参いただくもの&gt;</h4>
+              <ul>
+                <li><i class="fas fa-check"></i>&#9312;予防接種予診票(当日保護者の方がご記入ください)</li>
+                <li><i class="fas fa-check"></i>&#9313;母子健康手帳</li>
+                <li><i class="fas fa-check"></i>&#9314;健康保険証</li>
+                <li><i class="fas fa-check"></i>&#9315;各種医療受給者証(こども医療費受給資格者証等)</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        
+
+
+        <!-- 各種検査  examination-->
+        <div class="medical-block">
+          <h3>各種検査</h3>
+          <div class="medical-block_content">
+            <div class="medical-checkup">
+              
+              <!-- 検査項目 -->
+              <div class="checkup-item endoscopy">
+                <p>内視鏡</p>
+              </div>
+              <!-- 検査項目 -->
+              <div class="checkup-item ultrasonography">
+                <p>超音波</p>
+              </div>
+              <!-- 検査項目 -->
+              <div class="checkup-item x-ray">
+                <p>レントゲン</p>
+              </div>
+              <!-- 検査項目 -->
+              <div class="checkup-item electrocardiography">
+                <p>心電図</p>
+              </div>
+              <!-- 検査項目 -->
+              <div class="checkup-item blood-test">
+                <p>血液検査</p>
+              </div>
+              <!-- 検査項目 -->
+              <div class="checkup-item other-inspection">
+                <p>その他の検査</p>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    
+
+
+
+      <!-- wrap終了タグ -->
+    </div>
+
+    <!-- container終了タグ -->
+  </div>
+
+<!-- footer -->
+<footer>
+  <div class="footer-logo"><i class="fab fa-pagelines"></i></div>
+
+  <div class="site-map">
+    <ul>診療
+      <li><a href="./index.html">トップページ</a></li>
+      <li><a href="./index.html#notice">お知らせ</a></li>
+      <li><a href="./page-medical.html">診療内容</a></li>
+      <li><a href="#">予約方法とお支払い</a></li>
+      <li><a href="#service">できること</a></li>
+    </ul>
+
+    <ul>クリニック
+      <li><a href="#policy">基本方針</a></li>
+      <li><a href="#">採用情報</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+    </ul>
+  </div>
+
+  <small>&copy;2021 Helth Clinic All Rights Reserved.</small>
+</footer>
+  
+</body>
+</html>

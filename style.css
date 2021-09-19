@@ -58,7 +58,7 @@ html, body {
 header {
   width: 100%;
   height: 160px;
-  background-color: #83dd87;
+  background-color: #9effce;
   position: absolute;
   top: 0;
 }
@@ -224,7 +224,7 @@ nav .pc-menu li:last-child {
   left: 100%;
   /*画面の外に飛ばして見えなくする*/
   z-index: 80;
-  background-color: #83dd87;
+  background-color: #9effce;
   transition: all 0.5s;
 }
 
@@ -299,7 +299,7 @@ button {
 footer {
   width: 100%;
   height: 350px;
-  background-color: #83dd87;
+  background-color: #9effce;
   position: relative;
   padding-bottom: 100px;
 }
@@ -351,7 +351,7 @@ footer {
   font-size: 0.8em;
 }
 .site-map ul li a:hover {
-  background-color: #d3f3d4;
+  background-color: white;
 }
 @media screen and (max-width:768px) {
   .site-map {
@@ -392,6 +392,255 @@ button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+* {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+html, body {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 160px;
+  background-color: #9effce;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  width: 60%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+@media screen and (max-width:768px) {
+  h1 {
+    font-size: 1.2em;
+    width: 100%;
+  }
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.logo i {
+  line-height: 120px;
+  font-size: 5em;
+}
+
+.tel {
+  width: 300px;
+  height: 120px;
+  line-height: 120px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: underline;
+  font-size: 1.6em;
+  text-shadow: 1px 1px 3px white;
+}
+@media screen and (max-width:768px) {
+  .tel {
+    top: 50px;
+    right: 10px;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+}
+@media screen and (max-width:768px) {
+  nav {
+    display: none;
+  }
+}
+nav .pc-menu {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+nav .pc-menu li {
+  width: 20%;
+  line-height: 40px;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid #666;
+}
+nav .pc-menu li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2em;
+}
+nav .pc-menu li a:hover, nav .pc-menu li a:focus {
+  transition: all 0.3s;
+  opacity: 0.8;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: underline;
+  background-color: rgba(8, 107, 187, 0.603);
+}
+nav .pc-menu li a:active {
+  transform: translateY(2px);
+}
+nav .pc-menu li:last-child {
+  border-right: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+@media screen and (max-width:768px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* メニューボタンの位置 */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+
+/* 三本線のハンバーガーアイコン */
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  border-radius: 2px;
+  background-color: #333;
+  position: absolute;
+}
+
+.menu-btn span:before {
+  bottom: 12px;
+}
+
+.menu-btn span:after {
+  top: 12px;
+}
+
+/* アイコンがクリックされた時に✗ボタンになる */
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+  /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* チェックボックスは隠す */
+#menu-btn-check {
+  display: none;
+}
+
+/* -----ここからメニューリスト-------- */
+/* 画面いっぱいに表示 */
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /*画面の外に飛ばして見えなくする*/
+  z-index: 80;
+  background-color: #9effce;
+  transition: all 0.5s;
+}
+
+/* チェックボタンがチェックされた時 */
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;
+  /*メニューを画面内へ*/
+}
+
+.menu-content ul {
+  padding: 70px 10px 0;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px #333;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 2em;
+  box-sizing: border-box;
+  color: #333;
+  text-decoration: none;
+  padding: 20px;
+  position: relative;
+}
+.menu-content ul li a:hover, .menu-content ul li a:focus {
+  background: rgba(8, 107, 187, 0.603);
+  color: white;
+}
+
+/* 三角形の矢印アイコン */
+.menu-content ul li a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: solid 2px #333;
+  border-right: solid 2px #333;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 10%;
+  top: 50%;
 }
 
 #access {
@@ -468,7 +717,7 @@ button {
 }
 
 .ch-content table {
-  background: rgba(131, 221, 135, 0.8);
+  background: rgba(183, 255, 183, 0.8);
   width: 90%;
   margin: 40px auto;
   border-collapse: collapse;
@@ -499,6 +748,600 @@ button {
   margin: 0 auto;
   padding-bottom: 100px;
   line-height: 2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+* {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+html, body {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 160px;
+  background-color: #9effce;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  width: 60%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+@media screen and (max-width:768px) {
+  h1 {
+    font-size: 1.2em;
+    width: 100%;
+  }
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.logo i {
+  line-height: 120px;
+  font-size: 5em;
+}
+
+.tel {
+  width: 300px;
+  height: 120px;
+  line-height: 120px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: underline;
+  font-size: 1.6em;
+  text-shadow: 1px 1px 3px white;
+}
+@media screen and (max-width:768px) {
+  .tel {
+    top: 50px;
+    right: 10px;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+}
+@media screen and (max-width:768px) {
+  nav {
+    display: none;
+  }
+}
+nav .pc-menu {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+nav .pc-menu li {
+  width: 20%;
+  line-height: 40px;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid #666;
+}
+nav .pc-menu li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2em;
+}
+nav .pc-menu li a:hover, nav .pc-menu li a:focus {
+  transition: all 0.3s;
+  opacity: 0.8;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: underline;
+  background-color: rgba(8, 107, 187, 0.603);
+}
+nav .pc-menu li a:active {
+  transform: translateY(2px);
+}
+nav .pc-menu li:last-child {
+  border-right: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+@media screen and (max-width:768px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* メニューボタンの位置 */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+
+/* 三本線のハンバーガーアイコン */
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  border-radius: 2px;
+  background-color: #333;
+  position: absolute;
+}
+
+.menu-btn span:before {
+  bottom: 12px;
+}
+
+.menu-btn span:after {
+  top: 12px;
+}
+
+/* アイコンがクリックされた時に✗ボタンになる */
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+  /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* チェックボックスは隠す */
+#menu-btn-check {
+  display: none;
+}
+
+/* -----ここからメニューリスト-------- */
+/* 画面いっぱいに表示 */
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /*画面の外に飛ばして見えなくする*/
+  z-index: 80;
+  background-color: #9effce;
+  transition: all 0.5s;
+}
+
+/* チェックボタンがチェックされた時 */
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;
+  /*メニューを画面内へ*/
+}
+
+.menu-content ul {
+  padding: 70px 10px 0;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px #333;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 2em;
+  box-sizing: border-box;
+  color: #333;
+  text-decoration: none;
+  padding: 20px;
+  position: relative;
+}
+.menu-content ul li a:hover, .menu-content ul li a:focus {
+  background: rgba(8, 107, 187, 0.603);
+  color: white;
+}
+
+/* 三角形の矢印アイコン */
+.menu-content ul li a::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: solid 2px #333;
+  border-right: solid 2px #333;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 10%;
+  top: 50%;
+}
+
+#medical-info {
+  padding-bottom: 100px;
+}
+
+.medical-block {
+  width: 86%;
+  position: relative;
+  margin: 100px 2% 0 12%;
+}
+@media screen and (max-width:768px) {
+  .medical-block {
+    margin: 100px auto;
+    width: 90%;
+  }
+}
+.medical-block h3 {
+  position: absolute;
+  top: 60px;
+  left: -10%;
+  z-index: 5;
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
+  border-radius: 50%;
+  background: #049691;
+  box-shadow: 2px 1px 2px #333;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+@media screen and (max-width:768px) {
+  .medical-block h3 {
+    position: static;
+    margin: 20px auto;
+  }
+}
+
+.medical-block_content {
+  width: 100%;
+  padding: 20px 20px 20px 150px;
+  border-radius: 40px;
+  background-color: #c1ffff;
+}
+@media screen and (max-width:768px) {
+  .medical-block_content {
+    padding: 20px;
+  }
+}
+.medical-block_content > p {
+  padding: 20px 10px;
+  margin: 20px auto;
+  font-size: 1.2em;
+  line-height: 1.8em;
+  white-space: pre-line;
+}
+
+.symptoms {
+  display: flex;
+}
+@media screen and (max-width:768px) {
+  .symptoms {
+    display: block;
+  }
+}
+.symptoms .symptoms_item {
+  width: 48%;
+  padding: 10px;
+  margin: 20px auto;
+  background-color: #ffcce5;
+  border-radius: 20px;
+  border: 1px solid #999;
+}
+@media screen and (max-width:768px) {
+  .symptoms .symptoms_item {
+    width: 100%;
+  }
+}
+.symptoms .symptoms_item p {
+  padding: 20px 10px;
+}
+
+h4 {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.6em;
+}
+
+.about-vaccine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media screen and (max-width:768px) {
+  .about-vaccine {
+    display: block;
+  }
+}
+
+.about-vaccine_circle {
+  width: 49%;
+  border-radius: 50%;
+  margin-top: 30px;
+  position: relative;
+}
+@media screen and (max-width:768px) {
+  .about-vaccine_circle {
+    width: 80%;
+    margin: 30px auto;
+  }
+}
+.about-vaccine_circle:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  box-shadow: 2px 2px 4px #999;
+}
+.about-vaccine_circle h4, .about-vaccine_circle p {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+}
+.about-vaccine_circle h4 {
+  top: 30px;
+}
+.about-vaccine_circle p {
+  top: 130px;
+  line-height: 1.8em;
+}
+.about-vaccine_circle::before {
+  display: block;
+  content: "";
+  padding-top: 100%;
+}
+
+.live-vaccine {
+  background-color: #ffcce5;
+}
+.live-vaccine:after {
+  content: "生";
+  background: #ff66b1;
+}
+
+.inactivated-vaccine {
+  background-color: #c1c1ff;
+}
+.inactivated-vaccine:after {
+  content: "不活";
+  background: #5b5bff;
+}
+
+.vaccine-btn {
+  width: 100%;
+}
+.vaccine-btn a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
+  background-color: #049691;
+  box-shadow: 2px 2px 2px #999;
+  font-size: 1.2em;
+  color: white;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.vaccine-info {
+  width: 80%;
+  margin: 50px auto;
+  position: relative;
+  font-size: 1.4em;
+  letter-spacing: 5px;
+  padding: 30px;
+}
+@media screen and (max-width:768px) {
+  .vaccine-info {
+    font-size: 1em;
+    width: 100%;
+    padding: 20px;
+    letter-spacing: 2px;
+  }
+}
+.vaccine-info p {
+  background: #9effce;
+  margin: 0 auto;
+  line-height: 2em;
+  text-align: center;
+  white-space: pre-line;
+}
+.vaccine-info span {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+@media screen and (max-width:768px) {
+  .vaccine-info span {
+    font-size: 1.2em;
+  }
+}
+.vaccine-info:before, .vaccine-info:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+@media screen and (max-width:768px) {
+  .vaccine-info:before, .vaccine-info:after {
+    width: 50px;
+    height: 50px;
+  }
+}
+.vaccine-info:before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #009944;
+  border-left: 2px solid #009944;
+}
+.vaccine-info:after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #009944;
+  border-right: 2px solid #009944;
+}
+
+.belongings {
+  width: 70%;
+  margin: 50px auto;
+}
+@media screen and (max-width:768px) {
+  .belongings {
+    width: 100%;
+  }
+}
+.belongings h4 {
+  border-left: 20px solid orange;
+  background: #ddd;
+}
+.belongings li {
+  padding: 10px;
+  font-size: 1.2em;
+}
+.belongings li i {
+  margin-right: 15px;
+  font-size: 1.2em;
+}
+
+.medical-checkup {
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+}
+@media screen and (max-width:768px) {
+  .medical-checkup {
+    width: 100%;
+  }
+}
+.medical-checkup .checkup-item {
+  width: calc(100% / 3);
+  background-size: cover;
+  border: 1px solid #777;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width:768px) {
+  .medical-checkup .checkup-item {
+    width: 50%;
+  }
+}
+.medical-checkup .checkup-item:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.medical-checkup .checkup-item:hover, .medical-checkup .checkup-item:focus {
+  transform: scale(0.98, 0.98);
+  opacity: 0.8;
+}
+.medical-checkup .checkup-item p {
+  font-size: 1.8em;
+  white-space: nowrap;
+  color: white;
+  text-shadow: 1px 1px #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.endoscopy {
+  background: url(./img/endoscopy.png);
+}
+
+.ultrasonography {
+  background: url(./img/ultrasonography.png);
+}
+
+.x-ray {
+  background: url(./img/X-ray.png);
+}
+
+.electrocardiography {
+  background: url(./img/electrocardiography.png);
+}
+
+.blood-test {
+  background: url(./img/blood-test.jpg);
+}
+
+.other-inspection {
+  background: url(./img/other-inspection.jpg);
 }
 
 .container {
@@ -556,7 +1399,7 @@ button {
   width: 100%;
   height: 80px;
   border-radius: 100px 0 0 100px;
-  background-color: #0F8625;
+  background-color: #009944;
   color: white;
   font-size: 2em;
 }
@@ -628,9 +1471,9 @@ section {
   }
 }
 .top_contents p span {
-  color: #0F8625;
+  color: #009944;
   font-size: 1.4em;
-  text-shadow: 1px 1px 4px #0F8625;
+  text-shadow: 1px 1px 4px #009944;
   font-family: "Hachi Maru Pop", cursive;
 }
 .top_contents p::before {
@@ -712,7 +1555,7 @@ section {
   width: 1200px;
   height: 1200px;
   border-radius: 50%;
-  background-color: #a8f0ed;
+  background-color: #c1ffff;
   z-index: -1;
 }
 #medical-contents::after {
@@ -994,7 +1837,7 @@ section {
   background: transparent;
   height: 400px;
   width: 100%;
-  background: linear-gradient(to bottom, transparent, #83dd87);
+  background: linear-gradient(to bottom, transparent, #9effce);
 }
 
 .pp {
